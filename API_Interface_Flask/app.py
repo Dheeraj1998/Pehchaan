@@ -62,7 +62,10 @@ def predict():
      percentage_predictions = clf.predict_proba(inputarray)
 
      percentage_predictions = np.array(percentage_predictions.tolist())
-     db.child("confidence_values").set({"material_1":percentage_predictions[0][0], "material_2":percentage_predictions[0][1], "material_3":percentage_predictions[0][2]})
+	material_1 = str(round(percentage_predictions[0][0],4))
+	material_2 = str(round(percentage_predictions[0][1],4))
+	material_3 = str(round(percentage_predictions[0][2],4))
+     db.child("confidence_values").set({"material_1":material_1, "material_2":material_2, "material_3":material_3})
 
      return jsonify({'ceramics':percentage_predictions[0][0],
                      'plastic':percentage_predictions[0][1],'wood':percentage_predictions[0][2]})
@@ -71,7 +74,7 @@ def predict():
 # Error page
 @app.errorhandler(404)
 def page_not_found(e):
-    return json.dumps("error"), 404
+    return render_template('error.html')
 
 
 if __name__ == "__main__":

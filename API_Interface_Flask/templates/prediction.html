@@ -54,10 +54,10 @@
                     var key_first = Object.keys(snapshot.val())[i];
                     var val_first = Object.values(snapshot.val())[i];
                     console.log(material_array[i]+":"+key_first+" : "+val_first);
-                    offer_card += "<div class='card'><div class='card-body'><h4 class='card-title'><a>"+material_array[i]+"</a></h4><input type='text' size='60'  id='daily_offer/"+key_first+"' value='"+val_first*100+"%' readonly>";
+                    offer_card += "<div class='card'><div class='card-body'><h4 class='card-title'><a>"+material_array[i]+"</a></h4><input type='text' size='60' style='text-align: center;' id='daily_offer/"+key_first+"' value='"+val_first*100+"%' readonly>";
                     offer_card += "</div></div>";
                 }
-                offer_card += "<button value='Refresh Page' style='margin-top:40px;background-color: teal;color: aliceblue' onClick='window.location.reload()'>Reload Page</button>";
+                offer_card += "<button value='Refresh Page' style='margin-top:40px;background-color: teal;padding: 10px;color: aliceblue' onClick='window.location.reload()'>Reload Page</button>";
 
             });
             
@@ -75,22 +75,28 @@
     <nav class="navbar navbar-expand-lg navbar-dark teal">
 
         <!-- Navbar brand -->
-        <a class="navbar-brand" href="#" style="font-family: 'Titillium Web', sans-serif;text-align: center; margin: auto;"><b>PEHCHAAN : </b><small>The Identifier</small><//a>
+        <img src="../static/AppLogo.png" alt="App logo">
+        <a class="navbar-brand" href="#" style="font-family: 'Titillium Web', sans-serif;text-align: center; margin: auto;"><b>PEHCHAAN : </b><small>The Identifier</small></a>
         <!-- Collapsible content -->
 
     </nav>
     <!--/.Navbar-->
+    
     <div id="offer-bar" style="margin-top: 40px;">
         <button onclick="display_offer()" style="background-color: teal;padding: 10px;color: aliceblue">Click to view prediction</button>
     </div>
     
+    <!--Footer-->
     <footer class="page-footer font-small teal fixed-bottom">
         
         <div class="footer-copyright text-center py-2">
-            <a href="#">CAPSTONE PROJECT - ANSHUL | DHEERAJ</a>
+            <a href="https://github.com/AnshulHedau/Pehchaan-The-Identifier">CAPSTONE PROJECT - ANSHUL | DHEERAJ</a>
         </div>
 
     </footer>
+    <!--/.Footer-->
+    
+    
     <!-- JQuery -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <!-- Bootstrap tooltips -->
